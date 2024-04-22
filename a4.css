@@ -1,0 +1,134 @@
+/*HUY XUAN PHAM / 000899551 / Assignment 4*/
+body {
+  margin: 0;
+  background-color: antiquewhite;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #a37b7b;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  padding-bottom: 0px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 84vh;
+  padding-top: 120px;
+  margin-top: 70px;
+  position: relative;
+}
+
+.picking {
+  justify-content: center;
+  margin-top: 20px;
+  display: flex;
+}
+
+.color-picker-container {
+  padding-left: 5px;
+}
+
+footer {
+  padding-top: 20px;
+  text-align: center;
+}
+
+
+#game-container {
+  border: 2px solid #121311;
+  margin-top: 35px;
+  background-color: #c8a8a8;
+}
+
+.basket {
+  fill: #392e01;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.fruit {
+  fill: #ff0000;
+  border: 2px solid black;
+}
+
+
+/* modify the animated text line */
+.animation {
+  position: absolute;
+  padding-top: 75px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%); /*center the container horizontally*/
+}
+
+/*animate the colorful circle*/
+@keyframes moveRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(800px); }
+}
+@keyframes changeColor {
+  0% { fill: #ffcc00; } /*start with yellow */
+  20% { fill: red; }     
+  40% { fill: #00ff00; } 
+  60% { fill: #2e8bab; }
+  80% { fill: #d82396; }
+  100% { fill: #06eec0; }
+}
+.animated-circle {
+  animation: moveRight 60s linear infinite, /*move animation with a duration of 60 seconds*/
+             changeColor 2s linear infinite; /*color change animation every 2 seconds*/
+}
+
+
+/*animate the text line*/
+@keyframes moveText {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(800px); }
+}
+
+.animated-text {
+  font-size: 16px;
+  fill: #000000;
+  animation: moveText 60s linear infinite; /*text animation with a duration of 60 seconds*/
+}
+
+
+/*media query for devices with a maximum width of 320px (phones)*/
+@media screen and (max-width: 320px) {
+  main {
+      padding-top: 80px;
+      margin-top: 60px;
+  }
+
+  #game-container {
+      width: 280px;/*width for phone layout*/
+      height: 350px;/*height for phone layout*/
+  }
+
+  .animation {
+      top: 10px;
+  }}
+
+/*media query for devices with a minimum width of 768px (desktops) */
+@media screen and (min-width: 768px) {
+  main {
+      height: 84vh;
+      padding-top: 120px;
+      margin-top: 70px;
+  }
+
+  #game-container {
+      width: 800px; /*width for desktop layout*/
+      height: 500px; /*height for desktop layout*/
+  }
+
+  .animation {
+      top: 20px; /* Reset bottom position for desktop layout */
+  }}
